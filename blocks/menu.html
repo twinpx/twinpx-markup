@@ -1,0 +1,218 @@
+	<div class="b-main-menu-block">
+		<menu id="main-menu" class="b-main-menu">
+			<li class="b-main-menu__person b-person">
+				<div class="b-person__avatar">
+					<a href="/profile/include.html"><img src="/images/avatar.gif" width="24" height="24" alt=""></a>
+				</div>
+				<!--#if expr="$page='index'" -->
+				<div class="b-person__card">
+					<div class="b-person__enter-link"><a href="/profile/include.html" class="i-no-ajax">Войти</a></div>
+				</div>
+				<!--#else -->
+				<div class="b-person__card">
+					<div class="b-person__name"><a href="/profile/include.html">Максим Савельев</a></div>
+					<div class="b-person__status">Руководитель</div>
+				</div>
+				<!--#endif -->
+			</li>
+			<li class="b-main-menu__item" data-dir="portfolio-web">
+				<a href="/portfolio-web/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">Веб-проекты</span>
+				</a>
+			</li>
+			<li class="b-main-menu__item" data-dir="portfolio-mobile">
+				<a href="/portfolio-mobile/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">Мобильные приложения</span>
+				</a>
+			</li>
+			<li class="b-main-menu__item" data-dir="about">
+				<a href="/about/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">Студия</span>
+				</a>
+			</li>
+			<li class="b-main-menu__item" data-dir="events">
+				<a href="/events/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">События</span>
+				</a>
+			</li>
+			<li class="b-main-menu__item" data-dir="contacts">
+				<a href="/contacts/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">Адрес</span>
+				</a>
+			</li>
+			<li class="b-main-menu__item" data-dir="tourism">
+				<a href="/tourism/include.html" class="b-main-menu__link">
+					<span class="b-main-menu__text">Tourism landing page</span>
+				</a>
+			</li>
+		</menu>
+	
+		<menu id="person-submenu" class="b-main-submenu">
+			<li class="b-main-submenu__item">
+				<a href="/portfolio/add-task/include.html" class="b-main-submenu__link">+ Добавить задачу</a>
+			</li>
+			<li class="b-main-submenu__item">
+				<a href="/portfolio/tasks/include.html" class="b-main-submenu__link">Мои задачи</a>
+			</li>
+		</menu>
+	
+		<div class="b-scrolled-menu b-scrolled-menu__type_main-submenu">
+			
+			<div class="b-scrolled-menu__nav">
+				<a href="#" class="b-scrolled-menu__nav-top"></a>
+				<a href="#" class="b-scrolled-menu__nav-bottom"></a>
+			</div>
+			
+			<div class="b-scrolled-menu__wrapper">
+				<div id="main-submenu" class="b-scrolled-menu__content">
+					
+					<!--#if expr="$page='about' || $page='about__resources' || $page='about__vacancies' || $page='about__clients'" -->
+					<menu class="b-main-submenu i-visible" data-dir="about">
+					<!--#else -->
+					<menu class="b-main-submenu" data-dir="about">
+					<!--#endif -->
+						<li class="b-main-submenu__item">
+							<a href="/about/resources/include.html" class="b-main-submenu__link">Возможности</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/about/vacancies/include.html" class="b-main-submenu__link">Вакансии</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/about/clients/include.html" class="b-main-submenu__link">Клиенты</a>
+						</li>
+					</menu>
+					
+					<!--#if expr="$page='portfolio-web' || $page='portfolio-web__work'" -->
+					<menu class="b-main-submenu i-visible" data-dir="portfolio-web">
+					<!--#else -->
+					<menu class="b-main-submenu" data-dir="portfolio-web">
+					<!--#endif -->
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Cossa.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Ars Hobby</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Foodclub.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Jettravel.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">АПТ</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">ИКРА</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Campbells.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Cossa.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Ars Hobby</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Foodclub.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Jettravel.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">АПТ</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">ИКРА</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Campbells.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Cossa.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Ars Hobby</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Foodclub.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Jettravel.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">АПТ</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">ИКРА</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Campbells.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Cossa.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Ars Hobby</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Foodclub.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Jettravel.ru</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">АПТ</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">ИКРА</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-web/work/include.html" class="b-main-submenu__link">Campbells.ru</a>
+						</li>
+					</menu>
+						
+					<!--#if expr="$page='portfolio-mobile' || $page='portfolio-mobile__work'" -->
+					<menu class="b-main-submenu i-visible" data-dir="portfolio-mobile">
+					<!--#else -->
+					<menu class="b-main-submenu" data-dir="portfolio-mobile">
+					<!--#endif -->
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-mobile/work/include.html" class="b-main-submenu__link">Foodclub for Android</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-mobile/work/include.html" class="b-main-submenu__link">Foodclub for iPhone</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-mobile/work/include.html" class="b-main-submenu__link">Inbar</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/portfolio-mobile/work/include.html" class="b-main-submenu__link">DBA</a>
+						</li>
+					</menu>					
+					
+					<!--#if expr="$page='events' || $page='events__event'" -->
+					<menu class="b-main-submenu i-visible" data-dir="events">
+					<!--#else -->
+					<menu class="b-main-submenu" data-dir="events">
+					<!--#endif -->
+						<li class="b-main-submenu__item">
+							<a href="/events/include.html" class="b-main-submenu__link">2013</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/events/include.html" class="b-main-submenu__link">2012</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/events/include.html" class="b-main-submenu__link">2011</a>
+						</li>
+						<li class="b-main-submenu__item">
+							<a href="/events/include.html" class="b-main-submenu__link">2010</a>
+						</li>
+					</menu>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>

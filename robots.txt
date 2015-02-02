@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /bitrix/
+Disallow: /admin/
+Disallow: /upload/
+Disallow: /img/
+Host: 

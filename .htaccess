@@ -1,0 +1,26 @@
+AddType text/html .shtml .html .htm
+AddHandler server-parsed .shtml .html .htm 
+Options Indexes FollowSymLinks Includes
+ErrorDocument 401 /401.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+ErrorDocument 503 /503.php
+
+#php_flag session.use_trans_sid off
+php_value display_errors 1
+
+<IfModule mod_mime.c>
+	AddType application/x-httpd-php .ico
+</IfModule>
+
+<IfModule mod_dir.c>
+	DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresByType image/jpeg "access plus 3 day"
+	ExpiresByType image/gif "access plus 3 day"
+</IfModule>
+
