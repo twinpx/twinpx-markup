@@ -1,4 +1,4 @@
-﻿$(function() {
+﻿﻿$(function() {
 	new Sliding($("#sliding"));
 	
 	appendCache(window.location.pathname);
@@ -19,14 +19,30 @@
 	onPageLoad(true);
 	
 	new FixedPanel("#b-fixed-panel");
-	
-	$("[data-placeholder]").each(function() {
-		$(this).placeholder();
-	});
-	
-	$("form").each(function() {
-		new Form(this);
-	});
+  
+  $( '#contacts-bar .b-phone-icon' ).click( function(e) {
+    var $body = $( 'body' );
+    if ( !$body.hasClass( 'i-cover' )) {
+      $body.addClass( 'i-cover' );
+      if ( !$( '#sliding #cover' ).length ) {
+        $( '#sliding' ).append( '<div id="cover"></div>' );
+      }
+      e.stopPropagation();
+    }
+    e.preventDefault();
+  });
+  
+  $( document ).bind( 'click', function(e) {
+    var $body = $( 'body' );
+    if ( $body.hasClass( 'i-cover' )) {
+      $body.removeClass( 'i-cover' );
+      $( '#cover' ).remove();
+    }
+  });
+  
+  $( '#contacts-panel' ).click( function(e) {
+    e.stopPropagation();
+  });
 });
 
 function Form(elem) {
@@ -45,6 +61,7 @@ function Form(elem) {
 		self.submitFlag = 0;
 		self.firstElement = null;
 		self.$submitButton = self.$elem.find(".b-form-submit .b-button");
+		self.$messageBackLink = self.$elem.find(".b-form-message__back");
 	}
 	
 	function handleEvents() {
@@ -53,6 +70,31 @@ function Form(elem) {
 		self.$elem.find("input, textarea")
 			.focus(focusElement)
 			.keyup(keyupElement);
+		if( self.$messageBackLink.length ) {
+			self.$messageBackLink.click( clickBackLink );
+		}
+	}
+	
+	function clickBackLink(e) {
+		e.preventDefault();
+		//self.$elem.removeClass( "i-message" );
+		$.ajax({
+			url: self.$messageBackLink.attr( "href" ),
+			type: "GET",
+			dataType: "html",
+			success: function ( data ) {
+				if ( typeof data === "string" ) {
+					self.$elem.fadeOut( 500, function () {
+						var $form = $( data );
+						self.$elem.before( $form.fadeIn() ).remove();
+						self = null;
+						$form.find("[data-placeholder]").placeholder();
+						new Form( $form );
+					});
+				}
+			},
+			error: ajaxError
+		});
 	}
 	
 	function keyupElement(e) {
@@ -72,7 +114,25 @@ function Form(elem) {
 	}
 	
 	function submitForm(e) {
-		if(isValid()) return true;		
+		if ( isValid() ) {
+			if ( !self.$elem.attr( "data-ajax-url" ) ) return true;
+			$.ajax({
+				url: self.$elem.attr( "data-ajax-url" ),
+				type: "POST",
+				data: self.$elem.serialize(),
+				dataType: "json",
+				success: function ( data ) {
+					if ( data.message ) {
+						self.$elem.find( ".b-form-message h2" ).text( data.message );
+					}
+					if ( data.url ) {
+						self.$elem.find( ".b-form-message__back" ).attr({ href: data.url });
+					}
+					self.$elem.addClass( "i-message" );
+				},
+				error: ajaxError
+			});
+		}
 		e.preventDefault();
 	}
 	
@@ -548,6 +608,12 @@ function onPageLoad(first) {
 	adaptiveBlocks();
 	pushHistory(first);
 	setPageMeta();
+	
+	$("[data-placeholder]").placeholder();
+	$("form").each(function() {
+		if ( $( this ).data( "Form" ) ) return;
+		new Form(this);
+	});
 }
 
 function pushHistory(first) {
@@ -572,7 +638,8 @@ function setPageMeta() {
 }
 
 function appendCache(url) {
-	if($("#sliding").data("Sliding").cache[url]) return;
+	if( $("#sliding").data("Sliding").cache[url] )
+		return;
 	$("#sliding").data("Sliding").cache[url] = $("#sliding").html();
 }
 

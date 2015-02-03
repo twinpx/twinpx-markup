@@ -1,0 +1,86 @@
+.b-news-list {
+  width: 100%;
+  .clearfix();
+  
+  &__item {
+    position: relative;
+    cursor: default;
+    
+    @media ( min-width: 1000px) {
+      width: 50%;
+      float: left;
+    }
+  }
+  
+  &__ill {
+    width: 100%;
+    height: auto;
+  }
+  
+  &__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba( 211, 90, 45, 0.88 );
+    color: #fff;
+    .opacity(0);
+    .transition( all 0.5s ease );
+    
+    .b-news-list__item:hover & {
+      .opacity(1)
+    }
+  }
+  
+  h3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 28pt;
+    font-weight: 100;
+    padding-right: 50px;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .b-button {
+    font-size: 22pt;
+    font-family: @roboto;
+    font-weight: 100;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 200px;
+    line-height: 62px;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  &__data {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 50%;
+  }
+  
+  &__day {
+    font-size: 66pt;
+    font-weight: 100;
+    line-height: 100px;
+  }
+  
+  &__month {
+    font-size: 10.5pt;
+    font-weight: 100;
+  }
+  
+  &__button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
+  
+}

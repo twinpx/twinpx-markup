@@ -1,0 +1,48 @@
+#contacts-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-height: 100%;
+  width: 540px;
+  background: #fafafa;
+  .translate(100%; 0);
+  .transition( all 0.3s ease );
+  z-index: 100;
+  
+  .i-cover & {
+    .translate(0; 0);
+  }
+}
+
+.b-contacts-panel {
+
+  &__content {
+    padding: 50px;
+  }
+
+  &__phone {
+    width: 45%;
+    float: left;
+  }
+
+  &__support {
+    width: 45%;
+    float: right;
+  }
+}
+
+.b-link-button {
+  border: 5px solid #84b81b;
+  color: #84b81b;
+  font-family: @roboto;
+  font-weight: 700;
+  font-size: 17pt;
+  display: block;
+  line-height: 52px;
+  text-align: center;
+  
+  &:hover {
+    text-decoration: none;
+    color: #84b81b;
+  }
+}

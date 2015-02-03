@@ -558,8 +558,21 @@ a:hover .b-social-nav__num__pointer {
 .b-sliding {
 	margin-left: 250px;
 	min-height: 100%;
-	background-color: #f2f2f2;
 	color: #333;
+  background: #fafafa;
+  position: relative;
+  
+  .i-cover & {
+    background: #000 !important;
+  }
+  
+  #cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 .b-sliding.i-preloader {
 	background-image: url(/images/preloader.png);
@@ -567,19 +580,27 @@ a:hover .b-social-nav__num__pointer {
 	background-position: center center;
 }
 .b-sliding-content {
-	padding: 195px 50px 50px;
+	padding: 70px 0 0;
+  background: #fafafa;
+  .transition( all 0.3s ease );
+  
+  .i-cover & {
+    .opacity(0.5) !important;
+  }
 }
 /*_sliding_*/
 
 /*index*/
 .b-index-banner {
 	width: 100%;
-	max-width: 800px;
-	margin-bottom: 45px;
 }
 #b-page__type_index h1 {
-	margin-bottom: 55px;
+	margin-bottom: 100px;
+  font-family: @roboto;
+  font-size: 10.5pt;
+  color: #333;
 }
+/*
 .b-news-list {
 	width: 100%;
 }
@@ -590,7 +611,7 @@ a:hover .b-social-nav__num__pointer {
 .b-news-list td {
 	padding-bottom: 10px;
 	height: 40px;
-}
+}*/
 /*_index_*/
 
 /*portfolio*/
