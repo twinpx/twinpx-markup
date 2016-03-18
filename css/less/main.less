@@ -50,7 +50,7 @@ h1, .b-h1 {
 	font-weight: 400;
 	font-family: @roboto-serif;
 	line-height: 1.25;
-	margin-bottom: 23px;
+	margin: 0 0 23px;
 	color: #666666;
 }
 h2 {
@@ -559,8 +559,13 @@ a:hover .b-social-nav__num__pointer {
 	margin-left: 250px;
 	min-height: 100%;
 	color: #333;
-  background: #fafafa;
+  background: #f6f6f6;
   position: relative;
+  .transition( all 0.5s ease );
+  
+  &.i-slideOut {
+    .translate(100%; 0)
+  }
   
   .i-cover & {
     background: #000 !important;
@@ -573,19 +578,26 @@ a:hover .b-social-nav__num__pointer {
     top: 0;
     left: 0;
   }
-}
-.b-sliding.i-preloader {
-	background-image: url(/images/preloader.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-.b-sliding-content {
-	padding: 70px 0 0;
-  background: #fafafa;
-  .transition( opacity 0.3s ease );
   
-  .i-cover & {
-    .opacity(0.5) !important;
+  &.i-preloader {
+    background-image: url(/images/preloader.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  &-content {
+    padding: 70px 50px 50px;
+    background: #f6f6f6;
+    .transition( opacity 0.3s ease );
+    .opacity(0);
+    
+    &.i-fadeIn {
+      .opacity(1);
+    }
+    
+    .i-cover & {
+      .opacity(0.5) !important;
+    }
   }
 }
 /*_sliding_*/
@@ -594,15 +606,20 @@ a:hover .b-social-nav__num__pointer {
 .b-index-banner {
 	width: 100%;
 }
-#b-page__type_index h1 {
-	margin-bottom: 100px;
-  font-family: @roboto;
-  font-size: 17pt;
-  font-weight: 100;
-  color: #333;
-  
-  b {
-    font-weight: 700;
+#b-page__type_index {
+  margin: -25px -50px -50px;
+  h1 {
+    margin-bottom: 47px;
+    padding: 0 50px;
+    font-family: @roboto;
+    font-size: 17pt;
+    font-weight: 100;
+    color: #333;
+    line-height: 1.6;
+    
+    b {
+      font-weight: 700;
+    }
   }
 }
 /*
@@ -1046,6 +1063,10 @@ a:hover .b-social-nav__num__pointer {
 	h1 {
 		font-size: 18pt;
 	}
+  
+  .b-order-form {
+    display: none;
+  }
 	
 	/*phone*/
 	.b-logo {
